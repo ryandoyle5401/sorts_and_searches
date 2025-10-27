@@ -1,5 +1,6 @@
-my_list = [3, 7, 8, 5, 4, 2, 6, 1]
-sub_list = my_list[:]
+# my_list = [3, 7, 8, 5, 4, 2, 6, 1]
+my_list = [7, 3, 8, 5, 4, 2, 6, 1]
+sub_list = []
 #print(my_list[:4])  # Note, stop is exclusive
 
 # ---------------------------------------------- This works at splitting the arrays recursively
@@ -14,14 +15,14 @@ sub_list = my_list[:]
 #         merge_sort(right_sub)
 
 
-def merge_sort(lst):
+def merge_sort(lst, sub_lst):
     # sub_lst = []
     if len(lst) > 1:
         mid = len(lst) // 2  # Calculate the midpoint of array
         left_sub = lst[:mid]
         right_sub = lst[mid:]
-        merge_sort(left_sub)  # Continue splitting left side of array
-        merge_sort(right_sub)  # Now split right side of array
+        merge_sort(lst[:mid], left_sub)  # Continue splitting left side of array
+        merge_sort(lst[mid:], right_sub)  # Now split right side of array
         lst = merge(left_sub, right_sub)  # Compare and merge
         return lst  # Return sub_lst after all sorting and merging
 
@@ -51,4 +52,4 @@ def merge(l_sub, r_sub):
             sub.append(num)
     return sub
 
-print(merge_sort(my_list))
+print(merge_sort(my_list, sub_list))
