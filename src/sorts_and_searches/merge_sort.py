@@ -1,17 +1,3 @@
-
-
-# ---------------------------------------------- This works at splitting the arrays recursively
-# def merge_sort(lst):
-#     if len(lst) > 1:
-#         mid = len(lst) // 2  # Calculate the midpoint of array
-#         left_sub = lst[:mid]
-#         right_sub = lst[mid:]
-#         print(f"left sub {left_sub}")
-#         print(f"right sub {right_sub}")
-#         merge_sort(left_sub)
-#         merge_sort(right_sub)
-
-
 def merge_sort(lst):
     if len(lst) > 1:
         print(lst)
