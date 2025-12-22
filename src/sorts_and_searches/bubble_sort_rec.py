@@ -14,3 +14,25 @@ my_list = [4, 3, 2, 1]
 print(f"My list before sorting: {my_list}")
 my_new_list = bubble_sort_rec(my_list, [])
 print(f"My list after sorting: {my_new_list}")
+
+
+
+
+
+
+
+
+def bubble_sort_rec(lst):
+    n = len(lst)
+    if n <= 1:
+        return lst
+    else:
+        for i in range(n-1):
+            if lst[i] > lst[i+1]:
+                lst[i], lst[i+1] = lst[i+1], lst[i]
+        return bubble_sort_rec(lst[:n-1])
+
+my_list = [4, 3, 2, 1]
+print(f"My list before sorting: {my_list}")
+my_new_list = bubble_sort_rec(my_list)
+print(f"My list after sorting: {my_new_list}")
